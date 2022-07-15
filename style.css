@@ -1,0 +1,89 @@
+@charset "utf-8";
+*{
+    font-family: 'roboto', sans-serif;
+}
+nav{
+    text-align: center;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+nav .link, .linkdropbox{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    text-transform:uppercase;
+    font-weight: bold;
+    padding-right: 6%;
+}
+.caixa{ /*Caixa para o menu com a página grande*/
+    width: 400px;
+    height: 2em;
+    margin: 0 auto;
+    padding-top:1em;
+    color: rgb(83, 83, 83);
+    background-color: rgb(66, 255, 255, 0.3);
+    border: 2px solid rgb(49, 49, 49, 0.2);
+    border-radius: 15px;
+    box-shadow: 15px 10px 35px 15px rgb(137, 251, 255);
+}
+.caixa li:hover{
+    color: blue;
+}
+.box{ /*Caixa para o responsivo e criar o hover*/
+    position: relative;
+    display: flexbox;
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    padding: 2px;
+    background-color: rgba(105, 105, 105, 0.466);
+    border-radius: 15px;
+    border: 2px solid rgba(27, 27, 27, 0.548);;
+    box-shadow: 5px 15px 20px rgba(105, 105, 105, 1.0);
+}
+.dropbox{ /*estilos da caixa do dropbox*/
+    position: relative;
+    margin: auto;
+    width: 120px;
+    height: 120px;
+    background: greenyellow;
+    padding: 1%;
+    border-radius: 15px;
+}
+.dropbox li{
+    display: inline-block;
+    padding-top: 3%;
+    margin-top: 4px;
+    text-align: center;
+    align-items: center;
+}
+.dropbox li:hover{ /*hover para alterar a cor quando passar o mouse*/
+    color: blue;
+}
+.box, .dropbox{/*transformando em invisível*/
+    display: none;
+}
+@media(max-width: 800px){/*criação do responsivo*/
+
+    .caixa{/*sumindo com o menu inicial*/
+        display: none;
+    }
+    div{/* dimensionando a div para só acontecer o hover quando passar o mouse*/
+        display: block;
+        width: 60px;
+        margin: 0 auto;
+    }
+    .box{/*Tornando visível a box*/
+        display: flex;
+    }
+    div:hover > .dropbox{ /*fazendo o menudropbox aparecer*/
+        display: grid;
+        transform: translateX(-30px); /*não estava centralizado, fiz um paleativo usando isso e o padding*/
+        padding: 0 0 0 5px;
+        background-color: rgb(255, 195, 195,0.4);
+        padding-bottom: 5px;
+        border: 2px solid rgba(255, 74, 74, 0.6) ;
+        box-shadow: 5px 15px 20px #ff4a4a99;
+    }
+}
